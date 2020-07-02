@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
     get "/all_products" => "products#every_product"
 
+    get "/mypage/:param" => "products#billy"
+
   end
 end

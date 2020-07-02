@@ -9,5 +9,9 @@ class Api::ProductsController < ApplicationController
     render 'the_products.json.jb'
   end
 
+  def billy
+    @message = params['param']
+    render 'agnes.json.jb'
+  end
 
 end
