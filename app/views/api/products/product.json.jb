@@ -1,6 +1,0 @@
-  
-{
-  n: @product.name,
-  p: @product.price,
-  d: @product.description,
-}
