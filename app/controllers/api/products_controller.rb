@@ -13,7 +13,8 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      image_url: params[:image_url]
     )
     @product.save
     render 'show.json.jb'
@@ -39,5 +40,9 @@ class Api::ProductsController < ApplicationController
     render json: {message: "Nice job, you have succesfully deleted this product"}
   end
 
-
+  if @product.save
+    render 'show.json.jb'
+  else
+    render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+  end
 end
