@@ -1,6 +1,7 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = Product.all 
+    # @products = Product.where("name LIKE ?", "%#{params[:search]}%")
+    @products = Product.order(price: :DESC)
     render 'index.json.jb'
   end
 
@@ -40,9 +41,9 @@ class Api::ProductsController < ApplicationController
     render json: {message: "Nice job, you have succesfully deleted this product"}
   end
 
-  if @product.save
-    render 'show.json.jb'
-  else
-    render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
-  end
+  # if @product.save
+  #   render 'show.json.jb'
+  # else
+  #   render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
+  # end
 end
