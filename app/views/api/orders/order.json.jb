@@ -1,0 +1,4 @@
+{
+  quantity: order.quantity,
+  product_id: order.product_id,
+}
