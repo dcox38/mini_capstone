@@ -1,0 +1,8 @@
+# {
+#   quantity: @carted_product.quantity,
+#   product_id: @carted_product.product_id,
+# }
+
+{
+  error: @product.errors.full_messages
+}
